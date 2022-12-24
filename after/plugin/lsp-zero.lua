@@ -6,5 +6,7 @@ lsp.ensure_installed({
   'eslint',
   'sumneko_lua',
 })
-lsp.nvim_workspace()
+lsp.nvim_workspace({
+  library = vim.api.nvim_get_runtime_file('', true)
+})
 lsp.setup()
