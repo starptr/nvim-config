@@ -38,19 +38,18 @@ require('dressing').setup({
     },
 
     -- Set to `false` to disable
-ppings = false,
-    -- mappings = {
-    --   n = {
-    --     ["<Esc>"] = "Close",
-    --     ["<CR>"] = "Confirm",
-    --   },
-    --   i = {
-    --     ["<C-c>"] = "Close",
-    --     ["<CR>"] = "Confirm",
-    --     ["<Up>"] = "HistoryPrev",
-    --     ["<Down>"] = "HistoryNext",
-    --   },
-    -- },
+    mappings = {
+      n = {
+        ["<Esc>"] = "Close",
+        ["<CR>"] = "Confirm",
+      },
+      i = {
+        ["<C-c>"] = "Close",
+        ["<CR>"] = "Confirm",
+        ["<Up>"] = "HistoryPrev",
+        ["<Down>"] = "HistoryNext",
+      },
+    },
 
     override = function(conf)
       -- This is the config that will be passed to nvim_open_win.

@@ -13,6 +13,11 @@ return require('packer').startup(function(use)
   -- When upgrading a plugin (i.e. changing the tag or commit hash), take care
   -- to update `use -> config`, files in `after/plugin/*`, and the keymaps in
   -- `after/plugin/which_key.lua` specifically.
+
+  use {
+    'f-person/git-blame.nvim',
+    commit = 'd3afb1c57918720548effb42edec530232436378',
+  }
   
   use {
     'nvim-lualine/lualine.nvim',
