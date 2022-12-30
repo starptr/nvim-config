@@ -15,6 +15,16 @@ return require('packer').startup(function(use)
   -- `after/plugin/which_key.lua` specifically.
   
   use {
+    'nvim-lualine/lualine.nvim',
+    commit = '32a7382a75a52e8ad05f4cec7eeb8bbfbe80d461',
+  }
+  
+  use {
+    'ruifm/gitlinker.nvim',
+    commit = "c68d4873a14d2ae614875685ccca2e49472989e8",
+  }
+  
+  use {
     'nvim-neo-tree/neo-tree.nvim',
     tag = '2.47',
     requires = {

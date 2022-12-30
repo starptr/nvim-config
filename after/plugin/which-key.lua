@@ -18,6 +18,9 @@ local which_key_tables = {
     p = { '"+p', 'Paste after cursor from clipboard' },
     P = { '"+P', 'Paste before cursor from clipboard' },
     y = { '"+y', 'Yank to clipboard' },
+    Y = { function()
+      require('gitlinker').get_buf_range_url('n', {})
+    end, 'Yank shareable permalink to clipboard' },
     d = { '"_d', 'Cut without yank' },
     D = { '"_D', 'Cut until EOL without yank' },
     c = { '"_c', 'Change without yank' },
@@ -72,6 +75,9 @@ local which_key_tables_visual = {
     p = { [["_dP]], 'Paste without yank' },
     P = { [["_d"+P]], 'Paste without yank from clipboard' },
     y = { '"+y', 'Yank to clipboard' },
+    Y = { function()
+      require('gitlinker').get_buf_range_url('v', {})
+    end, 'Yank shareable permalink to clipboard' },
     d = { '"_d', 'Cut without yank' },
     D = { '"_D', 'Cut until EOL without yank' },
     c = { '"_c', 'Change without yank' },
