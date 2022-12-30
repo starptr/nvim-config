@@ -30,4 +30,6 @@ vim.g.maplocalleader = ' '
 
 vim.opt.timeoutlen = 300
 
+vim.opt.cmdheight = 0
+
 require("packer-plugins")
