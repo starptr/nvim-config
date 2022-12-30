@@ -1,3 +1,5 @@
+
+
 require('legendary').setup({
   -- Initial keymaps to bind
   keymaps = {
@@ -6,7 +8,11 @@ require('legendary').setup({
     -- { 'Y', { n = 'y$' }, description = 'Yank until EOL' },
   },
   -- Initial commands to bind
-  commands = {},
+  commands = {
+    { ':PileNvim' , function()
+      vim.cmd [[:tabnew ~/.config/nvim/ideas-pile.md]]
+    end, description = 'Note down new nvim config ideas for later' },
+  },
   -- Initial augroups/autocmds to bind
   autocmds = {},
   -- Initial functions to bind
