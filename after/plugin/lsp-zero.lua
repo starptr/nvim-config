@@ -5,7 +5,7 @@ lsp.set_preferences {
   set_lsp_keymaps = true,
   configure_diagnostics = true,
   cmp_capabilities = true,
-  manage_nvim_cmp = true,
+  manage_nvim_cmp = false,
   call_servers = 'local',
   sign_icons = {
     error = '✘',
@@ -20,11 +20,7 @@ lsp.ensure_installed({
   'eslint',
   'sumneko_lua',
 })
--- lsp.nvim_workspace()
-
-lsp.nvim_workspace({
-  library = vim.api.nvim_get_runtime_file('', true)
-})
+lsp.nvim_workspace()
 
 lsp.setup()
 
