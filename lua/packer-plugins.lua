@@ -15,6 +15,11 @@ return require('packer').startup(function(use)
   -- `after/plugin/which_key.lua` specifically.
 
   use {
+    'windwp/nvim-autopairs',
+    commit = '03580d758231956d33c8dd91e2be195106a79fa4',
+  }
+
+  use {
     'f-person/git-blame.nvim',
     commit = 'd3afb1c57918720548effb42edec530232436378',
   }

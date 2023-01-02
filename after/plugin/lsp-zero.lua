@@ -117,3 +117,7 @@ local cmp_config = lsp.defaults.cmp_config({
   },
 })
 cmp.setup(cmp_config)
+
+-- insert `(` after select function or method item
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done())
