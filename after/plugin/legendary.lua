@@ -1,10 +1,9 @@
-
-
 require('legendary').setup({
   -- Initial keymaps to bind
   keymaps = {
     { 'J', { v = [[:m '>+1<cr>gv=gv]] }, description = 'Move lines down' },
     { 'K', { v = [[:m '<-2<cr>gv=gv]] }, description = 'Move lines up' },
+    { '<M-v>', "<c-r>+", description = 'Move lines up', mode = { 'i', 's' } },
     -- { 'Y', { n = 'y$' }, description = 'Yank until EOL' },
   },
   -- Initial commands to bind
