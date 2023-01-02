@@ -1,4 +1,5 @@
 require("example")
+require('remap-cmd-to-meta')
 
 vim.opt.guifont = "Iosevka Nerd Font:h15"
 vim.g.neovide_floating_blur_amount_x = 2.0
@@ -33,3 +34,4 @@ vim.opt.timeoutlen = 300
 vim.opt.cmdheight = 0
 
 require("packer-plugins")
+
