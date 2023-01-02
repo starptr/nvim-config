@@ -9,6 +9,7 @@ List of things to do in my nvim config
 - Focused writing [limelight.vim](https://github.com/junegunn/limelight.vim)
 - Optimize `.editorconfig` project setup workflow
 - Fast Wrap in [nvim-autopairs](https://github.com/windwp/nvim-autopairs)
+- Remapped version of [vim-surround](https://github.com/tpope/vim-surround)
 
 ## Done
 - Parenthesis management [nvim-autopairs](https://github.com/windwp/nvim-autopairs)
