@@ -8,6 +8,7 @@ List of things to do in my nvim config
 - Distraction-free writing [goyo.vim](https://github.com/junegunn/goyo.vim)
 - Focused writing [limelight.vim](https://github.com/junegunn/limelight.vim)
 - Optimize `.editorconfig` project setup workflow
+- Fast Wrap in [nvim-autopairs](https://github.com/windwp/nvim-autopairs)
 
 ## Done
 - Parenthesis management [nvim-autopairs](https://github.com/windwp/nvim-autopairs)
