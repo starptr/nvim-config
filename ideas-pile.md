@@ -9,4 +9,4 @@ List of things to do in my nvim config
 - Markdown syntax highlighting (use a different theme?)
 - Distraction-free writing [goyo.vim](https://github.com/junegunn/goyo.vim)
 - Focused writing [limelight.vim](https://github.com/junegunn/limelight.vim)
-- Optimize `.editorconfig` setup
+- Optimize `.editorconfig` project setup workflow
