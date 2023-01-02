@@ -30,10 +30,6 @@ vim.api.nvim_create_autocmd("TextChangedI", {
   end,
 })
 
-
-vim.api.nvim_set_keymap('i', '<M-j>', '<esc>j', {})
-vim.api.nvim_set_keymap('i', '<S-M-j>', 'hi<esc>', {})
-
 -- Shifted maps are untested
 -- vim.api.nvim_set_keymap('', '<S-D-A>', '<S-M-A>', { desc = "Remap cmd to alt" })
 -- vim.api.nvim_set_keymap('', '<S-D-B>', '<S-M-B>', { desc = "Remap cmd to alt" })
