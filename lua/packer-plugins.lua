@@ -15,6 +15,11 @@ return require('packer').startup(function(use)
   -- `after/plugin/which_key.lua` specifically.
 
   use {
+    'windwp/nvim-ts-autotag',
+    commit = "fdefe46c6807441460f11f11a167a2baf8e4534b",
+  }
+
+  use {
     'windwp/nvim-autopairs',
     commit = '03580d758231956d33c8dd91e2be195106a79fa4',
   }
