@@ -33,5 +33,8 @@ vim.opt.timeoutlen = 300
 
 vim.opt.cmdheight = 0
 
-require("packer-plugins")
+if vim.fn.has('gui_vimr') == 1 then
+  require('gui-vimr')
+end
 
+require("packer-plugins")
