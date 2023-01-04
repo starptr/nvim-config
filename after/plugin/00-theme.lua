@@ -1,3 +1,6 @@
+-- This file must be sourced before other plugin configurations that depend on
+-- theme information, such as lualine.
+
 local use_transparent = true
 
 -- Set theme mode
