@@ -39,6 +39,7 @@ end
 
 local cmp_config = lsp.defaults.cmp_config({
   sources = {
+    {name = 'copilot'},
     --- These are the default sources for lsp-zero
     {name = 'path'},
     {name = 'nvim_lsp'},

@@ -15,6 +15,26 @@ return require('packer').startup(function(use)
   -- `after/plugin/which_key.lua` specifically.
 
   use {
+    'zbirenbaum/copilot.lua',
+    commit = '81eb5d1bc2eddad5ff0b4e3c1c4be5c09bdfaa63',
+    event = 'VimEnter',
+    config = function()
+      vim.defer_fn(function()
+        require('copilot').setup()
+      end, 100)
+    end,
+  }
+
+  use {
+    'zbirenbaum/copilot-cmp',
+    commit = '84d5a0e8e4d1638e7554899cb7b642fa24cf463f',
+    after = {'copilot.lua'},
+    config = function ()
+      require('copilot_cmp').setup()
+    end
+  }
+
+  use {
     'windwp/nvim-ts-autotag',
     commit = "fdefe46c6807441460f11f11a167a2baf8e4534b",
   }
