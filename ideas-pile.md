@@ -11,6 +11,10 @@ List of things to do in my nvim config
 - Fast Wrap in [nvim-autopairs](https://github.com/windwp/nvim-autopairs)
 - Remapped version of [vim-surround](https://github.com/tpope/vim-surround)
 
+## Blocked
+- Fix `<M-v>` mapping for terminal mode
+
 ## Done
 - Parenthesis management [nvim-autopairs](https://github.com/windwp/nvim-autopairs)
 - Html-like tags [nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag)
+- Fix neo-tree to respect `.gitignore` and don't ignore anything else

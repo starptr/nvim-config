@@ -1,3 +1,4 @@
+-- XXX: add the "TextChangedT" event to the list of events. Blocked by https://github.com/neovim/neovim/issues/21685
 vim.api.nvim_create_autocmd("TextChangedI", {
   group = vim.api.nvim_create_augroup('NeovideCaptureSuperWorkaround', { clear = true }),
   callback = function()
