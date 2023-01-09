@@ -31,7 +31,7 @@ vim.g.maplocalleader = ' '
 
 vim.opt.timeoutlen = 300
 
-vim.opt.cmdheight = 0
+vim.opt.cmdheight = 1
 
 if vim.fn.has('gui_vimr') == 1 then
   require('gui-vimr')

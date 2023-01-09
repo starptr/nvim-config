@@ -53,9 +53,10 @@ local which_key_tables = {
     m = { '<cmd>Mason<cr>', 'Mason' },
     j = { vim.diagnostic.goto_next, 'Next diagnostic' },
     k = { vim.diagnostic.goto_prev, 'Next diagnostic' },
-    l = { vim.lsp.codelens.run, 'CodeLens action' },
+    c = { vim.lsp.codelens.run, 'CodeLens action' },
     q = { vim.diagnostic.setloclist, 'QuickFix' },
     r = { vim.lsp.buf.rename, 'Rename' },
+    f = { require('utils').format, 'Format' },
   },
 }
 
@@ -69,6 +70,10 @@ local which_key_opts_visual = {
 }
 
 local which_key_tables_visual = {
+  l = {
+    name = "+lsp",
+    f = { require('utils').format, 'Format' }, -- Automatically applies to selection only
+  },
   ["<leader>"] = {
     name = "+QOL",
     -- We don't need 4 paste variants because when replacing selected text, before & after cursor are the same
