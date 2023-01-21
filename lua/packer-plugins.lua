@@ -91,12 +91,12 @@ return require('packer').startup(function(use)
 
   use {
     'VonHeikemen/lsp-zero.nvim',
-    commit = "eb581c105321e26b2dc3f8e83f0ebdbbc3701865",
+    commit = "ca02b3b4e5e3fa24f29557e92016c924fd3ad59e",
     requires = {
       -- LSP Support
-      { 'neovim/nvim-lspconfig', commit = "9d9ed94f92223755e3ed1500bbf5093a2ebb0cdd" },
-      { 'williamboman/mason.nvim', commit = "e6f6f901959d39d112b096d26b909c65723981d3" },
-      { 'williamboman/mason-lspconfig.nvim', commit = "5bea0e851b8f48479d2cb927cd26733b4058b2b3" },
+      { 'neovim/nvim-lspconfig', commit = "bb5675b2daa220a8716eda2c27b23307434f1c31" },
+      { 'williamboman/mason.nvim', commit = "9660a811b2e0bd959b63c7f7d41853b49546544d" },
+      { 'williamboman/mason-lspconfig.nvim', commit = "5b388c0de30f1605671ebfb9a20a620cda50ffce" },
 
       -- Autocompletion
       { 'hrsh7th/nvim-cmp', commit = "8bbaeda725d5db6e4e1be2867a64b43bf547cf06" },
