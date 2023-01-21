@@ -1,16 +1,20 @@
 local M = {}
 
+function M.capture_stdout_from_shell(cmd)
+  local handle = io.popen(cmd) -- os.execute crashes neovide; see https://github.com/neovide/neovide/issues/1376#issue-1289518816
+  if handle == nil then
+    error("Could not execute shell command")
+  end
+  local res = handle:read("*a")
+  handle:close()
+  return res
+end
+
 function M.is_system_in_dark_mode()
   if vim.fn.has('macunix') == 1 then
     -- mac os
     local cmd = [[zsh -c 'defaults read -g AppleInterfaceStyle']]
-    local handle = io.popen(cmd) -- os.execute crashes neovide; see https://github.com/neovide/neovide/issues/1376#issue-1289518816
-    if handle == nil then
-      error("Could not execute shell command", 2)
-    end
-    local res = handle:read("*a")
-    handle:close()
-    return res == 'Dark\n'
+    return M.capture_stdout_from_shell(cmd) == 'Dark\n'
   end
 
   error("Not implemented for current OS", 2)
@@ -42,6 +46,28 @@ function M.format(opts)
   opts = opts or {}
   opts.filter = opts.filter or M.format_filter
   return vim.lsp.buf.format(opts)
+end
+
+
+local valid_version_ids = {
+  ['system@17.0.6-aarch64'] = true,
+  ['system@11.0.18-aarch64'] = true,
+  ['openjdk@1.11.0-2'] = true,
+}
+-- This function retrieves the path to a jdk version using jabba
+function M.get_jdk_path_using_jabba(version_id)
+  if vim.fn.has('macunix') ~= 1 then
+    error("Not implemented for current OS", 2)
+  end
+
+  if valid_version_ids[version_id] == nil then
+    error("Jdk version doesn't exist, or isn't explicitly listed in the table in nvim dotfiles' utils script.", 1)
+  end
+
+  local cmd = [[zsh -ic 'jabba which ]] .. version_id .. [[']]
+  local res = M.capture_stdout_from_shell(cmd)
+  local path_to_macos_wrapped_jdk = res:sub(1, -2) -- remove trailing newline
+  return path_to_macos_wrapped_jdk .. [[/Contents/Home]]
 end
 
 return M

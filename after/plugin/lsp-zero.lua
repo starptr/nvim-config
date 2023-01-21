@@ -15,6 +15,8 @@ lsp.set_preferences {
   }
 }
 
+lsp.skip_server_setup({'jdtls'})
+
 lsp.ensure_installed({
   'tsserver',
   'eslint',

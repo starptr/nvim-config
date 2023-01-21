@@ -15,6 +15,11 @@ return require('packer').startup(function(use)
   -- `after/plugin/which_key.lua` specifically.
 
   use {
+    'mfussenegger/nvim-jdtls',
+    commit = 'beb9101fb4a8a4f2655e691980b4c82a27d2e920'
+  }
+
+  use {
     'jose-elias-alvarez/null-ls.nvim',
     commit = '915558963709ea17c5aa246ca1c9786bfee6ddb4'
   }
