@@ -29,6 +29,9 @@ local config = {
       },
     },
   },
+  on_attach = function(client, bufnr)
+    require('jdtls.setup').add_commands()
+  end,
 }
 require('jdtls').start_or_attach(config)
 
