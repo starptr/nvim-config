@@ -15,6 +15,16 @@ return require('packer').startup(function(use)
   -- `after/plugin/which_key.lua` specifically.
 
   use {
+    'rcarriga/nvim-dap-ui',
+    commit = 'b80227ea56a48177786904f6322abc8b2dc0bc36'
+  }
+
+  use {
+    'mfussenegger/nvim-dap',
+    commit = 'c64a6627bb01eb151da96b28091797beaac09536'
+  }
+
+  use {
     'mfussenegger/nvim-jdtls',
     commit = 'beb9101fb4a8a4f2655e691980b4c82a27d2e920'
   }

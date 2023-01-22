@@ -5,6 +5,21 @@ local jdtls_jar = jdtls_root .. '/plugins/org.eclipse.equinox.launcher_1.6.400.v
 -- TODO: support all platforms
 local jdtls_config = jdtls_root .. '/config_mac'
 
+local bundle_jars = {}
+
+local java_debug_adapter_root = require('mason-registry').get_package('java-debug-adapter'):get_install_path()
+local java_debug_jar_parent = java_debug_adapter_root .. '/extension/server'
+local java_debug_jar_pattern = java_debug_jar_parent .. '/com.microsoft.java.debug.plugin-*.jar'
+local java_debug_jar = vim.fn.glob(java_debug_jar_pattern, 1)
+vim.list_extend(bundle_jars, { java_debug_jar })
+
+local java_test_root = require('mason-registry').get_package('java-test'):get_install_path()
+local java_test_jars_parent = java_test_root .. '/extension/server'
+local java_test_jars_pattern = java_test_jars_parent .. '/*.jar'
+local java_test_jars = vim.fn.glob(java_test_jars_pattern, 1)
+local java_test_jar_list = vim.split(java_test_jars, '\n')
+vim.list_extend(bundle_jars, java_test_jar_list)
+
 local utils = require('utils')
 
 local config = {
@@ -26,12 +41,44 @@ local config = {
             path = utils.get_jdk_path_using_jabba('system@17.0.6-aarch64'),
           },
         },
+        updateBuildConfiguration = "interactive",
+      },
+      eclipse = {
+        downloadSources = true,
+      },
+      maven = {
+        downloadSources = true,
+      },
+      implementationsCodeLens = {
+        enabled = true,
+      },
+      referencesCodeLens = {
+        enabled = true,
+      },
+      references = {
+        includeDecompiledSources = true,
       },
     },
+    signatureHelp = { enabled = true },
+    -- extendedClientCapabilities = extendedClientCapabilities,,
+    codeGeneration = {
+      toString = {
+        template = "${object.className}{${member.name()}=${member.value}, ${otherMembers}}",
+      },
+      useBlocks = true,
+    },
+  },
+  flags = {
+    allow_incremental_sync = true,
   },
   on_attach = function(client, bufnr)
     require('jdtls.setup').add_commands()
+    require('jdtls').setup_dap({ hotcodereplace = 'auto' })
+    require('jdtls.dap').setup_dap_main_class_configs()
   end,
+  init_options = {
+    bundles = bundle_jars,
+  },
 }
 require('jdtls').start_or_attach(config)
 

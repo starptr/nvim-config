@@ -58,6 +58,34 @@ local which_key_tables = {
     r = { vim.lsp.buf.rename, 'Rename' },
     f = { require('utils').format, 'Format' },
   },
+  s = {
+    name = "+specific",
+    j = {
+      name = "+java",
+      v = { function() require('jdtls').extract_variable() end, 'Extract variable' },
+      c = { function() require('jdtls').extract_constant() end, 'Extract constant' },
+      a = { function() require('jdtls').test_class() end, 'Test class' },
+      t = { function() require('jdtls').test_nearest_method() end, 'Test method' },
+      f = { function() require('jdtls').organize_imports() end, 'Organize imports' },
+    },
+  },
+  d = {
+    name = "+debug",
+    t = { function() require('dap').toggle_breakpoint() end, 'Toggle breakpoint' },
+    b = { function() require('dap').step_back() end, 'Step Back' },
+    c = { function() require('dap').continue() end, 'Continue' },
+    C = { function() require('dap').run_to_cursor() end, 'Run To Cursor' },
+    D = { function() require('dap').disconnect() end, 'Disconnect' },
+    g = { function() require('dap').session() end, 'Get Session' },
+    i = { function() require('dap').step_into() end, 'Step Into' },
+    n = { function() require('dap').step_over() end, 'Step Over' },
+    o = { function() require('dap').step_out() end, 'Step Out' },
+    p = { function() require('dap').pause() end, 'Pause' },
+    r = { function() require('dap').repl.toggle() end, 'Toggle Repl' },
+    s = { function() require('dap').continue() end, 'Start' },
+    q = { function() require('dap').close() end, 'Quit' },
+    e = { function() require('dapui').toggle({reset = true}) end, 'Toggle UI' },
+  },
 }
 
 local which_key_opts_visual = {
@@ -73,6 +101,13 @@ local which_key_tables_visual = {
   l = {
     name = "+lsp",
     f = { require('utils').format, 'Format' }, -- Automatically applies to selection only
+  },
+  s = {
+    name = "+specific",
+    j = {
+      name = "+java",
+      m = { function() require('jdtls').extract_method() end, 'Extract method' },
+    },
   },
   ["<leader>"] = {
     name = "+QOL",
