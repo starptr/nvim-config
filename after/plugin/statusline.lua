@@ -1,3 +1,10 @@
+-- Check lualine is installed
+local ok, _ = pcall(require, 'lualine')
+if not ok then
+  print('Lualine is not installed')
+  return
+end
+
 -- Free the timer if this file is re-sourced
 if _G.my_global_statusline_timer then
   _G.my_global_statusline_timer:stop()
