@@ -1,9 +1,11 @@
 local ok_lsp, lsp = pcall(require, 'lsp-zero')
 local ok_cmp, cmp = pcall(require, 'cmp')
-if not ok_lsp or not ok_cmp then
-  error("This module depends on lsp-zero and cmp", 2)
+local ok_luasnip, luasnip = pcall(require, 'luasnip')
+if not ok_lsp or not ok_cmp or not ok_luasnip then
+  error("This module depends on lsp-zero, cmp, and luasnip", 2)
 end
 
+local select_opts = {behavior = cmp.SelectBehavior.Select}
 local function check_back_space()
   local col = vim.fn.col('.') - 1
   if col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
@@ -15,9 +17,23 @@ end
 
 local M = {}
 
-function M.setup(tbl)
-  local cmp_config = lsp.defaults.cmp_config(tbl)
+local copilot_enabled = true -- Initial value depends on whether `M.get_default_custom_cmp_config_ext()` sources copilot by default
+-- Functions prefixed with "just" should "just" work
+function M.just_toggle_copilot()
+  if not copilot_enabled then
+    copilot_enabled = true
+    cmp.setup(M.get_merged_cmp_config())
+    return -- omg
+  end
+
+  copilot_enabled = false
+  local cmp_config = M.get_merged_cmp_config()
+  table.remove(cmp_config.sources, 1)
   cmp.setup(cmp_config)
+end
+
+function M.get_merged_cmp_config()
+  return lsp.defaults.cmp_config(M.get_default_custom_cmp_config_ext())
 end
 
 function M.get_default_custom_cmp_config_ext()

@@ -11,6 +11,7 @@ require('legendary').setup({
     { ':PileNvim' , function()
       vim.cmd [[:tabnew ~/.config/nvim/ideas-pile.md]]
     end, description = 'Note down new nvim config ideas for later' },
+    { ':NCBJToggleCopilot', function() require('nvim-cmp-better').just_toggle_copilot() end, description = 'Just toggle copilot completion source' },
   },
   -- Initial augroups/autocmds to bind
   autocmds = {},

@@ -94,20 +94,9 @@ lsp.nvim_workspace {}
 lsp.setup()
 
 local cmp = require('cmp')
-local luasnip = require('luasnip')
-local select_opts = {behavior = cmp.SelectBehavior.Select}
-
-local function check_back_space()
-  local col = vim.fn.col('.') - 1
-  if col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
-    return true
-  else
-    return false
-  end
-end
 
 local ncb = require('nvim-cmp-better')
-ncb.setup(ncb.get_default_custom_cmp_config_ext())
+cmp.setup(ncb.get_merged_cmp_config())
 
 -- insert `(` after select function or method item
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
