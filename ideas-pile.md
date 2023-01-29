@@ -1,6 +1,7 @@
 # Pile-Nvim
 List of things to do in my nvim config
 
+- C++ debug impl: use the recommended dap for macos, and use debug build in cmake
 - Code context provider [nvim-navic](https://github.com/SmiteshP/nvim-navic)
 - Character motion quickly with [quick-scope](https://github.com/unblevable/quick-scope)
 - Editing surrounding stuff [vim-surround](https://github.com/tpope/vim-surround)
