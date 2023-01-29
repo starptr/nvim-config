@@ -50,7 +50,10 @@ function M.get_default_custom_cmp_config_ext()
       entries = { name = 'custom', selection_order = 'near_cursor' }
     },
     mapping = {
-      ['<CR>'] = cmp.mapping.confirm({ select = false }),
+      ['<CR>'] = cmp.mapping.confirm({
+        behavior = cmp.ConfirmBehavior.Replace,
+        select = false,
+      }),
       -- ['<C-y>'] = cmp.mapping.confirm({select = false}),
 
       -- navigate items on the list
