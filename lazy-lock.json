@@ -31,7 +31,10 @@
   "nvim-web-devicons": { "branch": "master", "commit": "05e1072f63f6c194ac6e867b567e6b437d3d4622" },
   "plenary.nvim": { "branch": "master", "commit": "9a0d3bf7b832818c042aaf30f692b081ddd58bd9" },
   "telescope.nvim": { "branch": "master", "commit": "b79cd6c88b3d96b0f49cb7d240807cd59b610cd8" },
+  "trouble.nvim": { "branch": "main", "commit": "556ef3089709a6e253df1e500381fec5eb48e48a" },
   "undotree": { "branch": "master", "commit": "1a23ea84bd02c34f50d8e10a8b4bfc89597ffe4e" },
+  "vim-flog": { "branch": "master", "commit": "2ba8af2c9682e3560db5b813d10acf3ba3415bc1" },
+  "vim-fugitive": { "branch": "master", "commit": "62f42f013d866139fa23068ac2651b3f7e05a56f" },
   "vscode.nvim": { "branch": "main", "commit": "dabd5454e88d9ac9f91a5c2f9f6b347410e31162" },
   "which-key.nvim": { "branch": "main", "commit": "86a58eac6a3bc69f5aa373b29df993d14fda3307" }
 }

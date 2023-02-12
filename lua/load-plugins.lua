@@ -26,12 +26,23 @@ return require('lazy').setup({
   -- `after/plugin/which_key.lua` specifically.
 
   -- The plugins below are local
+  -- lazy.nvim does not manage local plugins; you must clone these yourself
   {
     'starptr/nvim-jdtls',
     dev = true,
   },
   -- The plugins above are local
 
+  {
+    'tpope/vim-fugitive'
+  },
+  {
+    'rbong/vim-flog'
+  },
+  {
+    'folke/trouble.nvim',
+    dependencies = { "nvim-tree/nvim-web-devicons", commit = "05e1072f63f6c194ac6e867b567e6b437d3d4622" },
+  },
   {
     'rcarriga/nvim-dap-ui',
     commit = 'b80227ea56a48177786904f6322abc8b2dc0bc36'

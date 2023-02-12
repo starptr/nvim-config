@@ -12,6 +12,7 @@ local which_key_tables = {
     name = "+misc",
     u = { '<cmd>UndotreeToggle<cr>', 'Undotree' },
     l = { '<cmd>Legendary<cr>', 'Legendary' },
+    t = { '<cmd>TroubleToggle<cr>', 'Trouble' },
   },
   ["<leader>"] = {
     name = "+QOL",
@@ -50,9 +51,16 @@ local which_key_tables = {
   l = {
     name = "+lsp",
     a = { function() vim.lsp.buf.code_action() end, 'Code action' },
+    i = { '<cmd>TroubleToggle document_diagnostics<cr>', 'Document diagnostics' },
+    w = { '<cmd>TroubleToggle workspace_diagnostics<cr>', 'Workspace diagnostics' },
+    v = { '<cmd>TroubleToggle lsp_references<cr>', 'View references' },
+    d = { '<cmd>TroubleToggle lsp_definitions<cr>', 'View definitions' },
+    D = { '<cmd>TroubleToggle lsp_type_definitions<cr>', 'View types' },
+    Q = { '<cmd>TroubleToggle quickfix<cr>', 'QuickFix' },
+    l = { '<cmd>TroubleToggle loclist<cr>', 'Loclist' },
     m = { '<cmd>Mason<cr>', 'Mason' },
     j = { vim.diagnostic.goto_next, 'Next diagnostic' },
-    k = { vim.diagnostic.goto_prev, 'Next diagnostic' },
+    k = { vim.diagnostic.goto_prev, 'Prev diagnostic' },
     c = { vim.lsp.codelens.run, 'CodeLens action' },
     q = { vim.diagnostic.setloclist, 'QuickFix' },
     r = { vim.lsp.buf.rename, 'Rename' },
@@ -67,6 +75,7 @@ local which_key_tables = {
       a = { function() require('jdtls').test_class() end, 'Test class' },
       t = { function() require('jdtls').test_nearest_method() end, 'Test method' },
       f = { function() require('jdtls').organize_imports() end, 'Organize imports' },
+      S = { '<cmd>JdtSetRuntime<cr>', 'Set runtime' },
     },
   },
   d = {
