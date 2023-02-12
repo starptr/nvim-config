@@ -14,6 +14,12 @@ return require('packer').startup(function(use)
   -- to update `use -> config`, files in `after/plugin/*`, and the keymaps in
   -- `after/plugin/which_key.lua` specifically.
 
+  -- The plugins below are local
+  use {
+    '~/src/nvim-jdtls'
+  }
+  -- The plugins above are local
+
   use {
     'rcarriga/nvim-dap-ui',
     commit = 'b80227ea56a48177786904f6322abc8b2dc0bc36'
@@ -25,6 +31,7 @@ return require('packer').startup(function(use)
   }
 
   use {
+    disable = true,
     'mfussenegger/nvim-jdtls',
     commit = 'beb9101fb4a8a4f2655e691980b4c82a27d2e920'
   }
@@ -112,6 +119,9 @@ return require('packer').startup(function(use)
       { 'neovim/nvim-lspconfig', commit = "bb5675b2daa220a8716eda2c27b23307434f1c31" },
       { 'williamboman/mason.nvim', commit = "9660a811b2e0bd959b63c7f7d41853b49546544d" },
       { 'williamboman/mason-lspconfig.nvim', commit = "5b388c0de30f1605671ebfb9a20a620cda50ffce" },
+
+      -- DAP Support
+      -- { "jayp0521/mason-nvim-dap.nvim", commit = "a775db8ac7c468fb05fcf67069961dba0d7feb56" },
 
       -- Autocompletion
       { 'hrsh7th/nvim-cmp', commit = "8bbaeda725d5db6e4e1be2867a64b43bf547cf06" },
