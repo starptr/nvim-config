@@ -37,4 +37,4 @@ if vim.fn.has('gui_vimr') == 1 then
   require('gui-vimr')
 end
 
-require("packer-plugins")
+require("load-plugins")

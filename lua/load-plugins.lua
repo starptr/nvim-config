@@ -1,13 +1,24 @@
--- This file can be loaded by calling `lua require('plugins')` from your init.vim
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
 
--- Only required if you have packer configured as `opt`
-vim.cmd [[packadd packer.nvim]]
+local opts = {
+  dev = {
+    path = "~/src-nvim-plugin-dev",
+  }
+}
 
-return require('packer').startup(function(use)
-  -- Packer can manage itself
-  use 'wbthomason/packer.nvim'
-
-  use 'nvim-lua/plenary.nvim'
+return require('lazy').setup({
+  'nvim-lua/plenary.nvim',
   -- The above plugins are allowed to be on rolling commits.
   -- NOTE: All other plugins must be pinned to a specific commit or tag.
   -- When upgrading a plugin (i.e. changing the tag or commit hash), take care
@@ -15,33 +26,34 @@ return require('packer').startup(function(use)
   -- `after/plugin/which_key.lua` specifically.
 
   -- The plugins below are local
-  use {
-    '~/src/nvim-jdtls'
-  }
+  {
+    'starptr/nvim-jdtls',
+    dev = true,
+  },
   -- The plugins above are local
 
-  use {
+  {
     'rcarriga/nvim-dap-ui',
     commit = 'b80227ea56a48177786904f6322abc8b2dc0bc36'
-  }
+  },
 
-  use {
+  {
     'mfussenegger/nvim-dap',
     commit = 'c64a6627bb01eb151da96b28091797beaac09536'
-  }
+  },
 
-  use {
-    disable = true,
-    'mfussenegger/nvim-jdtls',
-    commit = 'beb9101fb4a8a4f2655e691980b4c82a27d2e920'
-  }
+  -- {
+  --   'mfussenegger/nvim-jdtls',
+  --   name = 'nvim-jdtls-upstream',
+  --   commit = 'beb9101fb4a8a4f2655e691980b4c82a27d2e920'
+  -- },
 
-  use {
+  {
     'jose-elias-alvarez/null-ls.nvim',
     commit = '915558963709ea17c5aa246ca1c9786bfee6ddb4'
-  }
+  },
 
-  use {
+  {
     'zbirenbaum/copilot.lua',
     commit = '81eb5d1bc2eddad5ff0b4e3c1c4be5c09bdfaa63',
     event = 'VimEnter',
@@ -50,71 +62,71 @@ return require('packer').startup(function(use)
         require('copilot').setup()
       end, 100)
     end,
-  }
+  },
 
-  use {
+  {
     'zbirenbaum/copilot-cmp',
     commit = '84d5a0e8e4d1638e7554899cb7b642fa24cf463f',
-    after = { 'copilot.lua' },
+    dependencies = { 'zbirenbaum/copilot.lua' },
     config = function()
       require('copilot_cmp').setup()
     end
-  }
+  },
 
-  use {
+  {
     'windwp/nvim-ts-autotag',
     commit = "fdefe46c6807441460f11f11a167a2baf8e4534b",
-  }
+  },
 
-  use {
+  {
     'windwp/nvim-autopairs',
     commit = '03580d758231956d33c8dd91e2be195106a79fa4',
-  }
+  },
 
-  use {
+  {
     'f-person/git-blame.nvim',
     commit = 'd3afb1c57918720548effb42edec530232436378',
-  }
+  },
 
-  use {
+  {
     'nvim-lualine/lualine.nvim',
     commit = '32a7382a75a52e8ad05f4cec7eeb8bbfbe80d461',
-  }
+  },
 
-  use {
+  {
     'ruifm/gitlinker.nvim',
     commit = "c68d4873a14d2ae614875685ccca2e49472989e8",
-  }
+  },
 
-  use {
+  {
     'nvim-neo-tree/neo-tree.nvim',
     tag = '2.47',
-    requires = {
+    dependencies = {
       "nvim-lua/plenary.nvim",
       { "nvim-tree/nvim-web-devicons", commit = "05e1072f63f6c194ac6e867b567e6b437d3d4622" },
       { "MunifTanjim/nui.nvim", commit = "5d1ca66829d8fac9965cd18fcc2cd9aa49ba1ea5" },
     },
-  }
+  },
 
-  use {
+  {
     'folke/which-key.nvim',
     commit = '86a58eac6a3bc69f5aa373b29df993d14fda3307',
-  }
+  },
 
-  use {
+  {
     'mrjones2014/legendary.nvim',
     tag = 'v2.5.2',
-  }
+  },
 
-  use {
+  {
     'gpanders/editorconfig.nvim',
     tag = 'v1.3.1',
-  }
+  },
 
-  use {
+  {
     'VonHeikemen/lsp-zero.nvim',
     commit = "ca02b3b4e5e3fa24f29557e92016c924fd3ad59e",
-    requires = {
+    dependencies = {
       -- LSP Support
       { 'neovim/nvim-lspconfig', commit = "bb5675b2daa220a8716eda2c27b23307434f1c31" },
       { 'williamboman/mason.nvim', commit = "9660a811b2e0bd959b63c7f7d41853b49546544d" },
@@ -135,34 +147,32 @@ return require('packer').startup(function(use)
       { 'L3MON4D3/LuaSnip', commit = "5570fd797eae0790affb54ea669a150cad76db5d" },
       { 'rafamadriz/friendly-snippets', commit = "1a6a02350568d6830bcfa167c72f9b6e75e454ae" },
     },
-  }
+  },
 
-  use {
+  {
     'mbbill/undotree',
     commit = "1a23ea84bd02c34f50d8e10a8b4bfc89597ffe4e",
-  }
+  },
 
-  use {
+  {
     'nvim-treesitter/nvim-treesitter',
     tag = "v0.8.1",
-    run = ':TSUpdate',
-  }
+    build = ':TSUpdate',
+  },
 
-  use {
+  {
     'Mofiqul/vscode.nvim',
     commit = "dabd5454e88d9ac9f91a5c2f9f6b347410e31162",
-  }
+  },
 
-  use {
+  {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.0',
-    requires = { { 'nvim-lua/plenary.nvim' } }
-  }
+    dependencies = { { 'nvim-lua/plenary.nvim' } }
+  },
 
-  use {
+  {
     'stevearc/dressing.nvim',
     commit = "4436d6f41e2f6b8ada57588acd1a9f8b3d21453c",
-    config = function()
-    end,
-  }
-end)
+  },
+}, opts)
