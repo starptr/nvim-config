@@ -30,6 +30,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 vim.opt.timeoutlen = 300
+vim.opt.swapfile = false
 
 vim.opt.cmdheight = 1
 

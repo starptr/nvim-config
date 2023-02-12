@@ -51,11 +51,15 @@ local which_key_tables = {
   l = {
     name = "+lsp",
     a = { function() vim.lsp.buf.code_action() end, 'Code action' },
-    i = { '<cmd>TroubleToggle document_diagnostics<cr>', 'Document diagnostics' },
-    w = { '<cmd>TroubleToggle workspace_diagnostics<cr>', 'Workspace diagnostics' },
-    v = { '<cmd>TroubleToggle lsp_references<cr>', 'View references' },
-    d = { '<cmd>TroubleToggle lsp_definitions<cr>', 'View definitions' },
-    D = { '<cmd>TroubleToggle lsp_type_definitions<cr>', 'View types' },
+    s = { '<cmd>Telescope lsp_document_symbols<cr>', 'Search sym (doc)' },
+    S = { '<cmd>Telescope lsp_dynamic_workspace_symbols<cr>', 'Search sym (wksp)' },
+    i = { '<cmd>Telescope diagnostics bufnr=0<cr>', 'Search diagnostics (doc)' },
+    w = { '<cmd>Telescope diagnostics<cr>', 'Search diagnostics (wksp)' },
+    I = { '<cmd>TroubleToggle document_diagnostics<cr>', 'Document diagnostics' },
+    W = { '<cmd>TroubleToggle workspace_diagnostics<cr>', 'Workspace diagnostics' },
+    v = { '<cmd>Telescope lsp_references<cr>', 'Search references' },
+    d = { '<cmd>Telescope lsp_definitions<cr>', 'Search definitions' },
+    D = { '<cmd>Telescope lsp_type_definitions<cr>', 'Search types defs' },
     Q = { '<cmd>TroubleToggle quickfix<cr>', 'QuickFix' },
     l = { '<cmd>TroubleToggle loclist<cr>', 'Loclist' },
     m = { '<cmd>Mason<cr>', 'Mason' },
@@ -94,6 +98,12 @@ local which_key_tables = {
     s = { function() require('dap').continue() end, 'Start' },
     q = { function() require('dap').close() end, 'Quit' },
     e = { function() require('dapui').toggle({reset = true}) end, 'Toggle UI' },
+  },
+  g = {
+    name = "+git",
+    w = { '<cmd>Gwrite<cr>', 'Write' },
+    c = { '<cmd>Git commit<cr>', 'Commit' },
+    d = { '<cmd>Git<cr>' , 'Diff' },
   },
 }
 
