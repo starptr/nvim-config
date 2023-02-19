@@ -40,6 +40,8 @@ vim.opt.swapfile = false
 
 vim.opt.cmdheight = 1
 
+vim.cmd 'NoMatchParen'
+
 if vim.fn.has('gui_vimr') == 1 then
   require('gui-vimr')
 end
