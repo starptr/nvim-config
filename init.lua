@@ -13,6 +13,7 @@ vim.opt.list = true
 vim.opt.listchars:append({ lead = '·' })
 vim.opt.listchars:append({ trail = '!' })
 vim.opt.listchars:append({ nbsp = '⊘' })
+vim.opt.listchars:append({ tab = '| ' })
 
 -- vim.opt.tabstop = 4
 -- vim.opt.shiftwidth = 4
