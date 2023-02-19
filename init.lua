@@ -9,6 +9,11 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.signcolumn = "yes"
 
+vim.opt.list = true
+vim.opt.listchars:append({ lead = '·' })
+vim.opt.listchars:append({ trail = '!' })
+vim.opt.listchars:append({ nbsp = '⊘' })
+
 -- vim.opt.tabstop = 4
 -- vim.opt.shiftwidth = 4
 -- vim.opt.softtabstop = 4
