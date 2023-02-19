@@ -34,6 +34,13 @@ return require('lazy').setup({
   -- The plugins above are local
 
   {
+    'tzachar/local-highlight.nvim',
+    config = function()
+      require('local-highlight').setup({})
+    end
+  },
+
+  {
     'tpope/vim-fugitive'
   },
   {
