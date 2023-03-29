@@ -31,6 +31,11 @@ return require('lazy').setup({
     'starptr/nvim-jdtls',
     dev = true,
   },
+  {
+    'starptr/helixfy.nvim',
+    dependencies = { 'Iron-E/nvim-libmodal' },
+    dev = true,
+  },
   -- The plugins above are local
 
   {

@@ -26,6 +26,7 @@
   "nvim-cmp": { "branch": "main", "commit": "8bbaeda725d5db6e4e1be2867a64b43bf547cf06" },
   "nvim-dap": { "branch": "master", "commit": "c64a6627bb01eb151da96b28091797beaac09536" },
   "nvim-dap-ui": { "branch": "master", "commit": "b80227ea56a48177786904f6322abc8b2dc0bc36" },
+  "nvim-libmodal": { "branch": "master", "commit": "e535c17e84d976af762c30076849995d73133d89" },
   "nvim-lspconfig": { "branch": "master", "commit": "bb5675b2daa220a8716eda2c27b23307434f1c31" },
   "nvim-treesitter": { "branch": "master", "commit": "69388e84c34d40c3d5c7d2f310db13276f2179e1" },
   "nvim-ts-autotag": { "branch": "main", "commit": "fdefe46c6807441460f11f11a167a2baf8e4534b" },
