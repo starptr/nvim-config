@@ -143,27 +143,26 @@ return require('lazy').setup({
 
   {
     'VonHeikemen/lsp-zero.nvim',
-    commit = "ca02b3b4e5e3fa24f29557e92016c924fd3ad59e",
     dependencies = {
       -- LSP Support
-      { 'neovim/nvim-lspconfig', commit = "bb5675b2daa220a8716eda2c27b23307434f1c31" },
-      { 'williamboman/mason.nvim', commit = "9660a811b2e0bd959b63c7f7d41853b49546544d" },
-      { 'williamboman/mason-lspconfig.nvim', commit = "5b388c0de30f1605671ebfb9a20a620cda50ffce" },
+      { 'neovim/nvim-lspconfig' },
+      { 'williamboman/mason.nvim' },
+      { 'williamboman/mason-lspconfig.nvim' },
 
       -- DAP Support
       -- { "jayp0521/mason-nvim-dap.nvim", commit = "a775db8ac7c468fb05fcf67069961dba0d7feb56" },
 
       -- Autocompletion
-      { 'hrsh7th/nvim-cmp', commit = "8bbaeda725d5db6e4e1be2867a64b43bf547cf06" },
-      { 'hrsh7th/cmp-buffer', commit = "3022dbc9166796b644a841a02de8dd1cc1d311fa" },
-      { 'hrsh7th/cmp-path', commit = "91ff86cd9c29299a64f968ebb45846c485725f23" },
-      { 'saadparwaiz1/cmp_luasnip', commit = "18095520391186d634a0045dacaa346291096566" },
-      { 'hrsh7th/cmp-nvim-lsp', commit = "59224771f91b86d1de12570b4070fe4ad7cd1eeb" },
-      { 'hrsh7th/cmp-nvim-lua', commit = "d276254e7198ab7d00f117e88e223b4bd8c02d21" },
+      { 'hrsh7th/nvim-cmp' },
+      { 'hrsh7th/cmp-buffer' },
+      { 'hrsh7th/cmp-path' },
+      { 'saadparwaiz1/cmp_luasnip' },
+      { 'hrsh7th/cmp-nvim-lsp' },
+      { 'hrsh7th/cmp-nvim-lua' },
 
       -- Snippets
-      { 'L3MON4D3/LuaSnip', commit = "5570fd797eae0790affb54ea669a150cad76db5d" },
-      { 'rafamadriz/friendly-snippets', commit = "1a6a02350568d6830bcfa167c72f9b6e75e454ae" },
+      { 'L3MON4D3/LuaSnip' },
+      { 'rafamadriz/friendly-snippets' },
     },
   },
 
