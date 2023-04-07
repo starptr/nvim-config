@@ -10,7 +10,8 @@ local which_key_opts = {
 local which_key_tables = {
   m = {
     name = "+misc",
-    u = { '<cmd>UndotreeToggle<cr>', 'Undotree' },
+    u = { '<cmd>UndotreeShow<cr><cmd>UndotreeFocus<cr>', 'Focus Undotree' },
+    y = { '<cmd>UndotreeHide<cr>', 'Close Undotree' },
     l = { '<cmd>Legendary<cr>', 'Legendary' },
     t = { '<cmd>TroubleToggle<cr>', 'Trouble' },
   },
