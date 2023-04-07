@@ -1,6 +1,8 @@
 # Pile-Nvim
 List of things to do in my nvim config
 
+- Undo-tree should automatically focus; otherwise, any buffer not on the left edge of the screen cannot see their history
+- Fuzzy File search should search some hidden files
 - See available telescope lists
 - Mason ensure install: autopep8, bash-language-server, clangd, cmake-language-server, codelldb, cpptools, css-lsp, dockerfile-language-server, eslint-lsp, java-debug-adapter, java-test, jdtls, json-lsp, lua-language-server, pyright, rust-analyzer, sqlls, tailwindcss-language-server, taplo, typescript-language-server
 - C++ debug impl: use the recommended dap for macos, and use debug build in cmake
