@@ -32,7 +32,10 @@ local which_key_tables = {
   },
   f = {
     name = "+file",
-    f = { '<cmd>Telescope find_files<cr>', 'Find File'},
+    f = { '<cmd>Telescope find_files<cr>', 'Search files'},
+    a = { function() require('telescope.builtin').find_files({
+      find_command = { 'rg', '--files', '--color', 'never', '--hidden', '--glob', '!**/.git/*' },
+    }) end , 'Search all files' },
     e = { '<cmd>Neotree position=right toggle<cr>', 'Browse' },
   },
   w = {
