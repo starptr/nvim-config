@@ -12,6 +12,21 @@ require('legendary').setup({
       vim.cmd [[:tabnew ~/.config/nvim/ideas-pile.md]]
     end, description = 'Note down new nvim config ideas for later' },
     { ':NCBJToggleCopilot', function() require('nvim-cmp-better').just_toggle_copilot() end, description = 'Just toggle copilot completion source' },
+    { ':SharingFriendlyToggle', function()
+      -- Define SharingFriendlyEnabled global variable
+      if vim.g.SharingFriendlyEnabled == nil then
+        vim.g.SharingFriendlyEnabled = false
+      end
+
+      if vim.g.SharingFriendlyEnabled then
+        -- Restore default settings
+        vim.opt.relativenumber = true
+      else
+        -- Set settings for sharing friendly mode
+        vim.opt.relativenumber = false
+      end
+      vim.g.SharingFriendlyEnabled = not vim.g.SharingFriendlyEnabled
+    end, description = 'Set some options which make it friendly for screen sharing' },
   },
   -- Initial augroups/autocmds to bind
   autocmds = {},
