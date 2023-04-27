@@ -10,7 +10,7 @@ function M.capture_stdout_from_shell(cmd)
   return res
 end
 
-function M.is_system_in_dark_mode()
+local function is_system_in_dark_mode()
   if vim.fn.has('macunix') == 1 then
     -- mac os
     local cmd = [[zsh -c 'defaults read -g AppleInterfaceStyle']]
@@ -18,6 +18,19 @@ function M.is_system_in_dark_mode()
   end
 
   error("Not implemented for current OS", 2)
+end
+
+-- This function usually retrieves a cached value which tells the caller whether
+-- the system is in dark mode.
+-- However, the first time it is called, the value calls the underlying functions
+-- so that the correct value can be cached. Therefore, if the system theme
+-- changes after this function is called for the first time, the value returned
+-- will not match the system theme.
+function M.is_dark_mode_cached()
+  if vim.g.is_dark_mode_cached == nil then
+    vim.g.is_dark_mode_cached = is_system_in_dark_mode()
+  end
+  return vim.g.is_dark_mode_cached
 end
 
 -- This function taken from LunarVim.

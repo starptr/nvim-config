@@ -5,7 +5,7 @@ local use_transparent = true
 
 -- Set theme mode
 local utils = require('utils')
-if utils.is_system_in_dark_mode() then
+if utils.is_dark_mode_cached() then
   use_transparent = true
   vim.o.background = 'dark' -- 'dark' or 'light'
   -- require('vscode').change_style('dark')
