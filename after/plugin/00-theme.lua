@@ -15,6 +15,15 @@ else
   -- require('vscode').change_style('light')
 end
 
+local function get_hl_group_attr_for_matchparen()
+  local vscode_colors = require('vscode.colors').get_colors()
+  if utils.is_dark_mode_cached() then
+    return { fg = vscode_colors.vscNone, bg = vscode_colors.vscCursorDark }
+  else
+    return { fg = vscode_colors.vscNone, bg = vscode_colors.vscCursorDarkDark }
+  end
+end
+
 -- local c = require('vscode.colors')
 require('vscode').setup({
     -- Enable transparent background
@@ -31,10 +40,10 @@ require('vscode').setup({
     --     vscLineNumber = '#FFFFFF',
     -- },
 
-    -- -- Override highlight groups (see ./lua/vscode/theme.lua)
-    -- group_overrides = {
-    --     -- this supports the same val table as vim.api.nvim_set_hl
-    --     -- use colors from this colorscheme by requiring vscode.colors!
-    --     Cursor = { fg=c.vscDarkBlue, bg=c.vscLightGreen, bold=true },
-    -- }
+    -- Override highlight groups (see ./lua/vscode/theme.lua)
+    group_overrides = {
+        -- this supports the same val table as vim.api.nvim_set_hl
+        -- use colors from this colorscheme by requiring vscode.colors!
+        MatchParen = get_hl_group_attr_for_matchparen(),
+    }
 })

@@ -1,1 +1,1 @@
-vim.cmd 'NoMatchParen'
+-- vim.cmd 'NoMatchParen'
