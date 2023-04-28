@@ -170,7 +170,7 @@ return require('lazy').setup({
 
   {
     'nvim-treesitter/nvim-treesitter',
-    tag = "v0.8.1",
+    tag = "v0.9.0",
     build = ':TSUpdate',
   },
 
