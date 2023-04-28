@@ -86,12 +86,12 @@ local config = {
     bundles = bundle_jars,
   },
 }
-vim.api.nvim_create_autocmd("BufRead", {
-  group = vim.api.nvim_create_augroup('LoadJdtlsForJava', { clear = true }),
-  callback = function ()
+--vim.api.nvim_create_autocmd("BufRead", {
+--  group = vim.api.nvim_create_augroup('LoadJdtlsForJava', { clear = true }),
+--  callback = function ()
     require('jdtls').start_or_attach(config)
-  end,
-})
+--  end,
+--})
 
 -- -- See `:help vim.lsp.start_client` for an overview of the supported `config` options.
 -- local config = {
