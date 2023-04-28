@@ -108,7 +108,6 @@ return require('lazy').setup({
 
   {
     'nvim-lualine/lualine.nvim',
-    commit = '32a7382a75a52e8ad05f4cec7eeb8bbfbe80d461',
   },
 
   {
