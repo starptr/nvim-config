@@ -27,10 +27,10 @@ return require('lazy').setup({
 
   -- The plugins below are local
   -- lazy.nvim does not manage local plugins; you must clone these yourself
-  {
-    'starptr/nvim-jdtls',
-    dev = true,
-  },
+  --{
+  --  'starptr/nvim-jdtls',
+  --  dev = true,
+  --},
   -- The plugins above are local
 
   {
@@ -60,11 +60,11 @@ return require('lazy').setup({
     commit = 'c64a6627bb01eb151da96b28091797beaac09536'
   },
 
-  -- {
-  --   'mfussenegger/nvim-jdtls',
-  --   name = 'nvim-jdtls-upstream',
-  --   commit = 'beb9101fb4a8a4f2655e691980b4c82a27d2e920'
-  -- },
+  {
+    'mfussenegger/nvim-jdtls',
+    name = 'nvim-jdtls-upstream',
+    commit = 'beb9101fb4a8a4f2655e691980b4c82a27d2e920'
+  },
 
   {
     'jose-elias-alvarez/null-ls.nvim',
