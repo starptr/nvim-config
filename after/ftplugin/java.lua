@@ -73,14 +73,15 @@ local config = {
   },
   on_attach = function(client, bufnr)
     require('jdtls.setup').add_commands()
-    require('jdtls').setup_dap({ hotcodereplace = 'auto' })
-    require('jdtls.dap').setup_dap_main_class_configs({
+    require('jdtls').setup_dap({
+      hotcodereplace = 'auto',
       config_overrides = {
         stepFilters = {
-          skipClasses = { '$JDK', 'jdk.*', 'java.*', 'javax.*', 'sun.*', 'sunw.*', 'com.sun.*' };
+          skipClasses = { '$JDK', 'jdk.*', 'java.*', 'javax.*', 'sun.*', 'sunw.*', 'com.sun.*', 'java.lang.*' };
         },
       },
     })
+    require('jdtls.dap').setup_dap_main_class_configs()
   end,
   init_options = {
     bundles = bundle_jars,

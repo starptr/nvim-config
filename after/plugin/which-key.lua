@@ -94,7 +94,12 @@ local which_key_tables = {
     C = { function() require('dap').run_to_cursor() end, 'Run To Cursor' },
     D = { function() require('dap').disconnect() end, 'Disconnect' },
     g = { function() require('dap').session() end, 'Get Session' },
-    i = { function() require('dap').step_into() end, 'Step Into' },
+    i = { function()
+      local ok, err = pcall(require('dap').step_into)
+      if not ok then
+        print(err)
+      end
+    end, 'Step Into' },
     n = { function() require('dap').step_over() end, 'Step Over' },
     o = { function() require('dap').step_out() end, 'Step Out' },
     p = { function() require('dap').pause() end, 'Pause' },
