@@ -112,7 +112,6 @@ return require('lazy').setup({
 
   {
     'ruifm/gitlinker.nvim',
-    commit = "c68d4873a14d2ae614875685ccca2e49472989e8",
   },
 
   {

@@ -8,6 +8,13 @@ local which_key_opts = {
 }
 
 local which_key_tables = {
+  c = {
+    name = "+qf",
+    o = { '<cmd>copen<cr>', 'Open quickfix' },
+    c = { '<cmd>cclose<cr>', 'Close quickfix' },
+    n = { '<cmd>cnext<cr>', 'Next location' },
+    p = { '<cmd>cprevious<cr>', 'Previous location' },
+  },
   m = {
     name = "+misc",
     u = { '<cmd>UndotreeShow<cr><cmd>UndotreeFocus<cr>', 'Focus Undotree' },
@@ -31,7 +38,8 @@ local which_key_tables = {
     S = { '"_S', 'Delete line and insert without yank' },
   },
   f = {
-    name = "+file",
+    name = "+search",
+    g = { require('telescope.builtin').live_grep, 'Live grep' },
     f = { '<cmd>Telescope find_files<cr>', 'Search files'},
     a = { function() require('telescope.builtin').find_files({
       find_command = { 'rg', '--files', '--color', 'never', '--hidden', '--glob', '!**/.git/*' },
@@ -113,6 +121,7 @@ local which_key_tables = {
     w = { '<cmd>Gwrite<cr>', 'Write' },
     c = { '<cmd>Git commit<cr>', 'Commit' },
     d = { '<cmd>Git<cr>' , 'Diff' },
+    g = { ':Git ', 'Run...' },
   },
 }
 
