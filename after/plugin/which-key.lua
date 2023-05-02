@@ -118,9 +118,10 @@ local which_key_tables = {
   },
   g = {
     name = "+git",
+    s = { '<cmd>Git<cr>', 'Status' },
     w = { '<cmd>Gwrite<cr>', 'Write' },
     c = { '<cmd>Git commit<cr>', 'Commit' },
-    d = { '<cmd>Git<cr>' , 'Diff' },
+    d = { '<cmd>Git diff<cr>' , 'Diff' },
     g = { ':Git ', 'Run...' },
   },
 }
