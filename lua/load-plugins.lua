@@ -41,6 +41,10 @@ return require('lazy').setup({
   },
 
   {
+    'akinsho/git-conflict.nvim',
+    version = '*',
+  },
+  {
     'lewis6991/gitsigns.nvim'
   },
   {
