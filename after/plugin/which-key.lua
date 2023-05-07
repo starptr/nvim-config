@@ -122,6 +122,8 @@ local which_key_tables = {
     w = { '<cmd>Gwrite<cr>', 'Write' },
     c = { '<cmd>Git commit<cr>', 'Commit' },
     d = { '<cmd>Git diff<cr>' , 'Diff' },
+    D = { '<cmd>Gitsigns toggle_deleted<cr>', 'Toggle deleted' },
+    f = { '<cmd>Flog<cr>', 'Open log' },
     g = { ':Git ', 'Run...' },
   },
 }
