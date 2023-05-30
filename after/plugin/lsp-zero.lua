@@ -87,7 +87,7 @@ lsp.skip_server_setup({'jdtls'})
 lsp.ensure_installed({
   'tsserver',
   'eslint',
-  'sumneko_lua',
+  -- 'sumneko_lua',
 })
 lsp.nvim_workspace {}
 
