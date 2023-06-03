@@ -34,6 +34,10 @@ return require('lazy').setup({
   -- The plugins above are local
 
   {
+    'lopi-py/luau-lsp.nvim',
+  },
+
+  {
     'tzachar/local-highlight.nvim',
     config = function()
       require('local-highlight').setup({})
